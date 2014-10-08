@@ -4,4 +4,7 @@ import re
 import google
 re.M
 
-num_slash = re.compile("[0-9]{1,2}/[0-9]{1,2}/[0-9]{2-4}");
+question = "When did World War II begin?"
+
+num_slash = re.compile("[0,9]{1,2}/[0,9]{1,2}/[0,9]{2,4}");
+google.search(question);
