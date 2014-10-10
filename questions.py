@@ -5,7 +5,6 @@
 import re
 import google
 from bs4 import BeautifulSoup
-from urllib import urlopen
 
 re.M #Enable multiline searching
 
@@ -20,5 +19,5 @@ pages = google.search(question,
               pause=.2
                   );
 
-url = pages.next()
-print urlopen(url)
+pages.next()
+print google.get_page(pages.next())
