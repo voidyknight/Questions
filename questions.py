@@ -11,7 +11,7 @@ re.M #Enable multiline searching
 question = "When did World War II begin?"
 query_types = ["when", "who"]
 
-num_slash = re.compile("[0,9]{1,2}/[0,9]{1,2}/[0,9]{2,4}");
+regex = re.compile("[0,9]{1,2}/[0,9]{1,2}/[0,9]{2,4}");
 
 pages = google.search(question,
               start=1,
@@ -20,4 +20,25 @@ pages = google.search(question,
                   );
 
 pages.next()
-print google.get_page(pages.next())
+rawHTML = google.get_page(pages.next())
+soup = BeautifulSoup(rawHTML)
+paragraph = soup.find_all('p')
+
+
+for index in range(0, len(paragraph)):
+    paragraph[index] = paragraph[index].string
+
+
+numCount = {}
+
+for item in paragraph:
+    list = regex.findall(unicode(item))
+    print item
+    for date in list:
+        if date not in numCount:
+            numCount[date] = 0
+        numCount[date] += 1
+
+print numCount
+    
+    
