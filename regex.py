@@ -9,6 +9,8 @@ titleword = "([A-Z][a-z]+)"
 #BUILT REGEXES    
 class slashdate_d4:
     regex = "%s/%s/%s".format(d2, d2, d4)
+    def add_self(data, match):
+        pass
 
 class slashdate_d2:
     regex = "%s/%s/%s".format(d2, d2, d2)
@@ -25,4 +27,5 @@ class bc_year:
 data = [[[0 for x in range(-4000, 4000)] for x in range(1, 13)] for x in range(1, 32)]
 #data[D][M][Y]
 
-def parse(data, para, regex):
+def parse(data, para, regex_obj):
+    [regex_obj.add_self(data, match) for match in regex_obj.regex.finditer(para)]
