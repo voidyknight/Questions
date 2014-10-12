@@ -20,6 +20,11 @@ def answer(question = None):
     #return render_template("answer.html", ans = answer)
     pass
 
+@app.route("/about")
+def about():
+    #return render_template("about.html")
+    pass
+
 if __name__ == "__main__":
     app.debug = True
     app.run()
