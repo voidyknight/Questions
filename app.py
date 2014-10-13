@@ -16,6 +16,7 @@ def main():
 
 @app.route("/answer/<question>")
 def answer(question = None):
+    question = question.replace("~", " ")
     #answer = answer(question)
     #return render_template("answer.html", ans = answer)
     pass
