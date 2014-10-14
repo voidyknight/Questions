@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for
-
+import questions
 app = Flask(__name__)
 
 @app.route("/")
-def main():
+def questionStuff():
 
 #names will be changed as css is created
     question = request.args.get("question", None)
@@ -17,14 +17,15 @@ def main():
 @app.route("/answer/<question>")
 def answer(question = None):
     question = question.replace("~", " ")
-    #answer = answer(question)
-    #return render_template("answer.html", ans = answer)
+    answer = questions.main(question)
+    sortedict =  sorted(answer, key=answer.get, reverse=True)
+    return render_template("answer.html", keys = sortedict.keys(), values = sortedict.values())
     pass
 
 @app.route("/about")
 def about():
     #return render_template("about.html")
-    pass
+    return redirect(url_for("/"))
 
 if __name__ == "__main__":
     app.debug = True
