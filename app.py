@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request
 import questions
 app = Flask(__name__)
 
@@ -30,11 +30,6 @@ def questionStuff():
             answer = questions.main(question)
             return render_template("answer.html", keys = first10Keys(answer), values = first10Vals(answer))
     return render_template("main.html");
-
-@app.route("/about")
-def about():
-    #return render_template("about.html")
-    return redirect(url_for("/"))
 
 if __name__ == "__main__":
     app.debug = True
