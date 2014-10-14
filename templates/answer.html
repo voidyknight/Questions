@@ -9,17 +9,17 @@
   <h1>Results and Occurences!</h1>
   <div style = "float: left; width: 50%;">
     <h2>Results</h2>
-    <table border="0" width="50%">
+    <table border="0" width="100%">
       {% for value in keys %}
-      <tr><td><center>{{value}}</center></td></tr>
+      <tr><td>{{value}}</td></tr>
       {% endfor %}
     </table>
   </div>
   <div style = "float: right; width: 50%;">
     <h2>Occurences!</h2>
-    <table border="0" width="50%">
+    <table border="0" width="100%">
       {% for num in values %}
-      <tr><td><center>{{num}}</center></td></tr>
+      <tr><td>{{num}}</td></tr>
       {% endfor %}>
     </table>
   </div>
