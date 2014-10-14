@@ -2,34 +2,25 @@
   <title>
     Answers!
   </title>
-  s<link rel="stylesheet" href="/static/swag.css" type ="text/css" media="screen">
+  <link rel="stylesheet" href="/static/swag.css" type ="text/css" media="screen">
 </head>
 
 <body>
-  
-  <div id="wrap">
-    <div id="header"><h1>Results and Occurences!</h1></div>
-    <div id="main">
-      <h2>Results</h2>
-      <table border="0">
-	{% for value in keys %}
-	<tr><td>{{value}}</td></tr>
-	{% endfor %}
-      </table>
-    </div>
-    <div id="sidebar">
-      <h2>Occurences!</h2>
-      <table> border="0">
-	{% for num in values %}
-	<tr><td>{{num}}</td></tr>
-	{% endfor %}
-      </table>
-    </div>
-    <div id="footer">
-      <p>footer</p>
-    </div>
-  </div>y
-
-
-
+  <h1>Results and Occurences!</h1>
+  <div style = "float: left; width: 50%;">
+    <h2>Results</h2>
+    <ul>
+      {% for value in keys %}
+      <li>{{value}}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div style = "float: right; width: 50%;">
+    <h2>Occurences!</h2>
+    <ul>
+      {% for num in values %}
+      <li>{{num}}</li>
+      {% endfor %}>
+    </ul>
+  </div>
 </body>
