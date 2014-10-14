@@ -1,0 +1,12 @@
+.center {
+    text-align: center;
+    text-color: pink;
+    font-weight: bold;
+}
+
+body {
+    background-image: url('swag.jpg');
+    text-align: center;
+    text-color: black;
+}
+

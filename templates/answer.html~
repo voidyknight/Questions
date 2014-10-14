@@ -2,4 +2,13 @@
   <title>
     Answers!
   </title>
+  s<link rel="stylesheet" href="/static/swag.css" type ="text/css" media="screen">
 </head>
+
+<body>
+  {% for element in ans %}
+  <br><br>
+  <h1> {{element}} </h1>
+  {% endfor %}
+
+</body>

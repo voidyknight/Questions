@@ -6,9 +6,11 @@
 </head>
 
 <body>
-  {% for element in ans %}
-  <br><br>
-  <h1> {{element}} </h1>
-  {% endfor %}
-
+  
+  <table border="0" width="100%">
+    {% for key, value in ans %}
+    <tr>
+      <td>{{key}}</td>
+      <td>{{value}}</td>
+    </tr>
 </body>
