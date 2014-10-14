@@ -9,7 +9,7 @@
 
 
 body {
-    background-image: url('swag3.jpeg');
+    background-image: url('swag3.jpg');
     background-size: 100%;
     text-align: center;
     text-color: black;
