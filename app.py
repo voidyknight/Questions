@@ -14,6 +14,7 @@ def first10Keys(dict):
 def first10Vals(dict):
     rawVals = dict.values()
     rawVals.sort()
+    rawVals.reverse()
     vals = []
     for x in range(10):
         vals.append(rawVals[x])
@@ -27,7 +28,6 @@ def questionStuff():
         question = request.form["question"]
         if question != None:
             answer = questions.main(question)
-            print first10Keys(answer)
             return render_template("answer.html", keys = first10Keys(answer), values = first10Vals(answer))
     return render_template("main.html");
 
